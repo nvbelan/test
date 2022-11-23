@@ -35,6 +35,13 @@
             <version>2.20.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-commandline -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-commandline</artifactId>
+            <version>2.20.1</version>
+            <type>pom</type>
+        </dependency>
 
     </dependencies>
     <build>
@@ -44,6 +51,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20</version>
                 <configuration>
+                    <reportDirectory>${basedir}/target/allure-report</reportDirectory>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
